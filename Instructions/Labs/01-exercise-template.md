@@ -1,6 +1,5 @@
----
-lab:
-  title: 사용자 지정 에이전트 만들기
+
+랩: '사용자 지정 에이전트 만들기'
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
@@ -33,7 +32,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
    
    c. **Name** : 선택한 이름을 입력합니다.
    
-   d. **Pricing tier**: 기본값은 **Standard S0**이지만 이 필드를 채울 때는 사용자 고유의 재량에 따라 사용합니다.
+   d. **가격 책정 계층**: 기본값은 **Standard S0**이지만 이 필드를 채울 때는 사용자 고유의 재량에 따라 사용합니다.
    
 **다음**을 선택합니다.
 
@@ -48,7 +47,7 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
 ## 작업 2: Azure OpenAI 모델에 대한 RAG 구현
 
-이제, ...
+이 작업에서는 사용자 고유의 테스트 환경에 대한 데이터 원본을 사용하여 RAG를 구현하는 방법을 알아봅니다.
 
 1. 새로 만들어진 Azure OpenAI 리소스에 대한 페이지에서 페이지 맨 위에 있는 리본의 **Azure OpenAI Studio로 이동**을 클릭합니다.
 2. **Azure OpenAI 서비스 시작**이라는 새 페이지에서 화면 왼쪽의 탐색 메뉴 중 **채팅**을 클릭합니다.
@@ -78,9 +77,9 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
  ## 작업 3: 테스트 도구 및 Teams에서 사용자 지정 에이전트 만들기 및 테스트
 
-이제, ...
+이 작업에서는 사용자 지정 에이전트를 만들고 에이전트를 테스트합니다.
 
-1. **Visual Studio Code**를 엽니다.
+1. **Visual Studio Code**를 사용하여 ASP.NET 5 API 앱을 만드는 방법을 보여줍니다.
 2. Visual Studio Code 창의 오른쪽에서 **Teams 도구 키트** 아이콘을 선택하고 **새 앱 만들기**를 선택한 후 드롭다운에서 **사용자 지정 엔진 에이전트**(참고: Teams 도구 키트 버전에 따라 **사용자 지정 Copilot**을 선택해야 할 수 있음)를 선택하고 **기본 AI 챗봇** > **JavaScript** > **Azure OpenAI**를 선택합니다.
 3. 화면 맨 위에 있는 빈 상자에 먼저 다음을 입력합니다.
 
@@ -96,13 +95,25 @@ To enable GitHub page publishing, edit the Page settings for the repo and publis
 
    f. 위의 a-f 단계에서 새로 만든 앱의 새 VS Code 창에서 화면 왼쪽에 있는 **Teams 도구 키트** 아이콘으로 이동합니다.
 
+   **참고:** Microsoft Teams 관리 센터에 대한 관리자 액세스 권한이 없는 사용자 환경에 대해서는 g-i 단계를 완료해야 합니다. 사용자에게 관리자 액세스 권한이 부여된 M365 테넌트가 있는 경우 대신 j-m 단계를 수행합니다.
+
    g. **계정** 섹션에서 **Microsoft 365에 로그인**을 클릭합니다. 이렇게 하면 브라우저에서 새 창이 열립니다. 제공된 자격 증명을 사용하여 로그인합니다.
 
    h. 앱의 VS Code 페이지로 다시 이동합니다. 이제 **계정 아래에 **사용자 지정 앱 업로드 사용**이라고 적힌 녹색 확인 표시가 나타납니다.
 
    i. **계정** 섹션에서 **Azure에 로그인**을 클릭합니다. 모든 팝업 창에서 **확인**을 클릭합니다. 이렇게 하면 브라우저에서 새 창이 열립니다. 제공된 자격 증명을 사용하여 로그인합니다.
+
+   Microsoft Teams 관리 센터에 대한 관리자 액세스 권한이 부여된 M365 테넌트가 있는 사용자의 경우 위의 g-i 단계 대신 다음 단계를 수행합니다.
+
+   j. https://admin.teams.microsoft.com관리자 자격 증명으로 로그인합니다.
+
+   k. 사이드바에서 **Teams 앱** 으로 이동한 다음  **설정 정책**을 선택합니다.
+
+   l.  **전역(조직 전체 기본값)**  정책을 선택한 다음  **사용자 지정 앱 업로드**  토글을 켭니다.
+
+   m. 아래로 스크롤하고  **저장** 단추를 선택하여 변경 내용을 저장합니다. 이제 테넌트가 사용자 지정 앱 테스트용 로드를 허용합니다. 
    
-4. 앱의 VS Code 창에서 **src/prompts/chat/skprompt.txt**로 이동합니다. 파일의 텍스트를 삭제하고 다음을 붙여넣습니다. "다음은 지정된 컨텍스트에 대한 질문에 대답하는 전문가인 AI 도우미와의 대화입니다. 
+5. 앱의 VS Code 창에서 **src/prompts/chat/skprompt.txt**로 이동합니다. 파일의 텍스트를 삭제하고 다음을 붙여넣습니다. "다음은 지정된 컨텍스트에 대한 질문에 대답하는 전문가인 AI 도우미와의 대화입니다. 
 
 응답은 80단어 이하의 짧은 저널리즘 스타일이어야 합니다." 
 
